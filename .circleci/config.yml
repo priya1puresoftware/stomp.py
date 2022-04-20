@@ -21,9 +21,11 @@ jobs:
             python3 -m venv venv || virtualenv venv && . venv/bin/activate
             python3 -m pip install --upgrade pip
             pip install -r requirements.txt
-            pip install poetry
+            pip install poetry stomp.py
             poetry install
-            pytest
+            make docker-image
+            make run-docker
+            make test
             
   build-medium-arm64:
     machine:
@@ -43,9 +45,11 @@ jobs:
             python3 -m venv venv || virtualenv venv && . venv/bin/activate
             python3 -m pip install --upgrade pip
             pip install -r requirements.txt
-            pip install poetry
+            pip install poetry stomp.py
             poetry install
-            pytest
+            make docker-image
+            make run-docker
+            make test
                     
       
 
