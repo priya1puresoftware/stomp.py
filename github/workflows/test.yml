@@ -24,14 +24,13 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install poetry
-        make docker-image
-        make run-docker
-        docker inspect stomppy
-        docker logs stomppy
+        pip install stomp.py
+        pip install -r requirements.txt
+
         
     - name: test      
       run: |
-        make test
+        pytest
 
   armv64_job:
     name: Build and Test for arm64
