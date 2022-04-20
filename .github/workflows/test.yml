@@ -24,7 +24,7 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install poetry
-        pip install stomppy
+        pip install stomp.py
         pip install -r requirements.txt
         
     - name: test      
