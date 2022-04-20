@@ -23,6 +23,7 @@ jobs:
         
     - name: Install Dependencies
       run: |
+        pip install poetry
         poetry update
         poetry build
         poetry export -f requirements.txt --dev -o requirements.txt
