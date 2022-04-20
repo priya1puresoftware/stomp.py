@@ -22,6 +22,8 @@ jobs:
             python3 -m pip install --upgrade pip
             pip install -r requirements.txt
             pip install poetry stomp.py
+            ./rabbitmq_service.sh
+            HOST_RABBITMQ_SERVICE_DIR=/tmp/rabbitmq-service-dir python3 rabbitmq_reproducer.py
             poetry install
             make docker-image
             make run-docker
